@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: branchef_development
+  database: banchef_development
   username: nokoarts
   password: n0k04rt5
   
