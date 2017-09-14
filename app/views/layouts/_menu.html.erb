@@ -1,0 +1,20 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        <%= image_tag('branchef_logo.png',size: "25") %>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <% if current_user %>
+          <li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
+          <li><%= link_to "Edit profile", edit_user_registration_path %></li>
+        <% else %>
+          <li><%= link_to 'Sign in', new_user_session_path , :class => "menu-hover" %></li>
+          <li><%= link_to 'Sign up',new_user_registration_path, :class => "menu-hover" %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>
