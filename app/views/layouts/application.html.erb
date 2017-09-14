@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Branchef</title>
+    <title>BrandChef</title>
+	    <!-- UIkit CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.30/css/uikit.min.css" />
+
+	<!-- jQuery is required -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!-- UIkit JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.30/js/uikit.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.30/js/uikit-icons.min.js"></script>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +18,31 @@
   </head>
 
   <body>
+      <nav class="uk-navbar-container" uk-navbar>
+          <div class="uk-navbar-left">
+
+              <a class="uk-navbar-item uk-logo" href="#">Logo</a>
+
+          </div>
+
+          <div class="uk-navbar-right">
+
+              <ul class="uk-navbar-nav">
+                  <% if user_signed_in? %>
+                    <li><%= link_to "Edit Profile", edit_user_registration_path, :class => "menu-hover" %></li>
+                    <li><%= link_to 'Logout', destroy_user_session_path, method: :delete, :class => "menu-hover" %></li>
+
+                  <% else %>
+                    <li><%= link_to "Sign Up", new_user_registration_path %></li>
+                    <li><%= link_to "Sign In", new_user_session_path %>
+                  <% end %>
+              </ul>
+
+          </div>
+      </nav>
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>
