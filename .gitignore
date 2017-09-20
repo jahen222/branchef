@@ -15,3 +15,7 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+
+# Ignore avatars
+/public/system/users/avatars/*
+/public/system/corottos/*
