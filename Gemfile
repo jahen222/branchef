@@ -21,6 +21,7 @@ gem 'bootstrap', '~> 4.0.0.beta'
 
 # gem devise for users
 gem 'devise'
+gem 'omniauth'
 
 group :development, :test do
   gem 'byebug', platform: :mri

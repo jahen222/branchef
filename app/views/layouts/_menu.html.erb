@@ -29,12 +29,22 @@
         <a>
           <%= image_tag(current_user.avatar.url(:thumb), :border=>0, :class => "rounded-circle") %>
         </a>
-      <% else %>
+      <% elsif current_chef %>
         <li class="nav-item">
-          <%= link_to 'Sign in', new_user_session_path, :class => "nav-link jahen-css-linktonavbar"%>
+          <%= link_to "Edit profile", edit_chef_registration_path, :class => "nav-link jahen-css-linktonavbar" %>
         </li>
         <li class="nav-item">
-          <%= link_to 'Sign up',new_user_registration_path, :class => "nav-link jahen-css-linktonavbar" %>
+          <%= link_to "Logout", destroy_chef_session_path, :method => :delete, :class => "nav-link jahen-css-linktonavbar" %>
+        </li>
+        <a>
+          <%= image_tag(current_chef.avatar.url(:thumb), :border=>0, :class => "rounded-circle") %>
+        </a>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to 'Sign in', static_pages_sign_in_path, :class => "nav-link jahen-css-linktonavbar"%>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Sign up', static_pages_sign_up_path, :class => "nav-link jahen-css-linktonavbar" %>
         </li>
       <% end %>
     </ul>
