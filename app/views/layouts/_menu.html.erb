@@ -26,9 +26,9 @@
         <li class="nav-item">
           <%= link_to "Logout", destroy_user_session_path, :method => :delete, :class => "nav-link jahen-css-linktonavbar" %>
         </li>
-        <a>
-          <%= image_tag(current_user.avatar.url(:thumb), :border=>0, :class => "rounded-circle") %>
-        </a>
+        <li class="round-image-50">
+          <%= image_tag(current_user.avatar.url(:thumb)) %>
+        </li>
       <% elsif current_chef %>
         <li class="nav-item">
           <%= link_to "Edit profile", edit_chef_registration_path, :class => "nav-link jahen-css-linktonavbar" %>
@@ -36,9 +36,9 @@
         <li class="nav-item">
           <%= link_to "Logout", destroy_chef_session_path, :method => :delete, :class => "nav-link jahen-css-linktonavbar" %>
         </li>
-        <a>
-          <%= image_tag(current_chef.avatar.url(:thumb), :border=>0, :class => "rounded-circle") %>
-        </a>
+        <li class="round-image-50">
+          <%= image_tag(current_chef.avatar.url(:thumb)) %>
+        </li>
       <% else %>
         <li class="nav-item">
           <%= link_to 'Sign in', static_pages_sign_in_path, :class => "nav-link jahen-css-linktonavbar"%>
@@ -48,6 +48,7 @@
         </li>
       <% end %>
     </ul>
+    &nbsp;&nbsp;
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
