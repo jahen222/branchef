@@ -39,6 +39,16 @@
         <li class="round-image-50">
           <%= image_tag(current_chef.avatar.url(:thumb)) %>
         </li>
+      <% elsif current_admin %>
+        <li class="nav-item">
+          <%= link_to "Edit profile", edit_admin_registration_path, :class => "nav-link jahen-css-linktonavbar" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Logout", destroy_admin_session_path, :method => :delete, :class => "nav-link jahen-css-linktonavbar" %>
+        </li>
+        <li class="round-image-50">
+          <%= image_tag(current_admin.avatar.url(:thumb)) %>
+        </li>
       <% else %>
         <li class="nav-item">
           <%= link_to 'Sign in', static_pages_sign_in_path, :class => "nav-link jahen-css-linktonavbar"%>

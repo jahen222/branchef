@@ -5,6 +5,12 @@ Rails.application.routes.draw do
   authenticated :user do
     root to: "home#index"
   end
+  authenticated :chef do
+    root to: "branchef#index"
+  end
+  authenticated :admin do
+    root to: "dashboard#index"
+  end
   root to: "static_pages#index"
   get "sign_in" , to: "static_pages#sign_in", as: "static_pages_sign_in"
   get "sign_up" , to: "static_pages#sign_up", as: "static_pages_sign_up"
@@ -35,4 +41,5 @@ Rails.application.routes.draw do
 
   # Route for users profiles
   resources :profiles, only: [:show]
+  resources :dashboard, only: [:index]
 end

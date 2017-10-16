@@ -61,10 +61,11 @@ ActiveRecord::Schema.define(version: 20171014190604) do
     t.integer  "zip_code"
     t.datetime "date_of_birth"
     t.string   "link_blog"
-    t.string   "link_instragram"
+    t.string   "link_instagram"
     t.string   "link_facebook"
     t.string   "link_linkedin"
     t.text     "summary"
+    t.boolean  "is_branchef",            default: false
     t.index ["email"], name: "index_chefs_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_chefs_on_reset_password_token", unique: true, using: :btree
   end

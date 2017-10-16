@@ -14,6 +14,71 @@
   </div>
 
   <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :is_female, "Gender" %>
+    <div class="field">
+      <%= f.radio_button :is_female, true %> <%= f.label :is_female, "Female" %>
+      <%= f.radio_button :is_female, false %> <%= f.label :is_female, "Male" %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone %><br />
+    <%= f.telephone_field :phone %>
+  </div>
+
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= f.label :zip_code %><br />
+    <%= f.number_field :zip_code %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date_of_birth %>
+    <div class="field">
+        <%= f.date_select :date_of_birth, start_year: 1920, end_year: 2016 %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :link_blog %><br />
+    <%= f.url_field :link_blog %>
+  </div>
+
+  <div class="field">
+    <%= f.label :link_instagram %><br />
+    <%= f.url_field :link_instagram %>
+  </div>
+
+  <div class="field">
+    <%= f.label :link_facebook %><br />
+    <%= f.url_field :link_facebook %>
+  </div>
+
+  <div class="field">
+    <%= f.label :link_linkedin %><br />
+    <%= f.url_field :link_linkedin %>
+  </div>
+
+  <div class="field">
+    <%= f.label :summary %><br />
+    <%= f.text_field :summary %>
+  </div>
+
+  <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>

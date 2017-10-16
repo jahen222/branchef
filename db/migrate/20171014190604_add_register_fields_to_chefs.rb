@@ -8,7 +8,7 @@ class AddRegisterFieldsToChefs < ActiveRecord::Migration[5.0]
     add_column :chefs, :zip_code, :integer
     add_column :chefs, :date_of_birth, :datetime
     add_column :chefs, :link_blog, :string
-    add_column :chefs, :link_instragram, :string
+    add_column :chefs, :link_instagram, :string
     add_column :chefs, :link_facebook, :string
     add_column :chefs, :link_linkedin, :string
     add_column :chefs, :summary, :text
