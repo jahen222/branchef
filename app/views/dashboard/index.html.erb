@@ -9,14 +9,14 @@
       <th>Branchef</th>
     </tr>
 
-    <% @chef.each do |c| %>
+    <% @chefs.each do |c| %>
       <tr>
         <td><%= c.id %></td>
         <td><%= c.name %></td>
         <td><%= c.email %></td>
         <td><%= c.phone %></td>
         <td><%= c.is_branchef %></td>
-        <td><%= link_to 'Edit', edit_chef_registration_path(c) %></td>
+        <td><%= link_to 'Edit', editchef_path(c.id) %></td>
       </tr>
     <% end %>
   </table>

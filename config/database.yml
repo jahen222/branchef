@@ -26,7 +26,7 @@ development:
   database: banchef_development
   username: nokoarts
   password: n0k04rt5
-  
+
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
@@ -80,8 +80,8 @@ development:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-#production:
-#  <<: *default
-#  database: branchef_production
-#  username: branchef
-#  password: <%= ENV['BRANCHEF_DATABASE_PASSWORD'] %>
+production:
+  <<: *default
+  database: d20tgj0un3qbaf
+  username: bvzromqpmwksau
+  password: <%= ENV['BRANCHEF_DATABASE_PASSWORD'] %>

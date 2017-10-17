@@ -39,7 +39,11 @@ Rails.application.routes.draw do
     unlocks: "admins/unlocks"
   }
 
-  # Route for users profiles
-  resources :profiles, only: [:show]
-  resources :dashboard, only: [:index]
+  # Routes for users profiles
+  get '/profiles/:id', to: 'profiles#show'
+
+  # Routes for users dashboard
+  get '/dashboard', to: 'dashboard#index'
+  get '/dashboard/:id', to: 'dashboard#editchef', as: 'editchef'
+  post '/dashboard/:id/accepted', to: 'dashboard#accepted', as: 'accepted'
 end
