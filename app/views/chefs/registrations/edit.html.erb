@@ -108,6 +108,11 @@
     <%= f.file_field :image10 %>
   </div>
 
+  <div class="field">
+    <%= f.label :cv %>
+    <%= f.file_field :cv %>
+  </div>
+  
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>

@@ -6,6 +6,7 @@ class Chef < ApplicationRecord
 
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
+
   # Formato imagenes of chef
   has_attached_file :image1, styles: { medium: '200x200>', thumb: '48x48>' }
   validates_attachment_content_type :image1, :content_type => /\Aimage\/.*\Z/
@@ -27,4 +28,8 @@ class Chef < ApplicationRecord
   validates_attachment_content_type :image9, :content_type => /\Aimage\/.*\Z/
   has_attached_file :image10, styles: { medium: '200x200>', thumb: '48x48>' }
   validates_attachment_content_type :image10, :content_type => /\Aimage\/.*\Z/
+
+  # Formato imagenes of chef
+  has_attached_file :cv
+  #validates_attachment_content_type :image10, :content_type => /\Aimage\/.*\Z/
 end
