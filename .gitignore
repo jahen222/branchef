@@ -16,6 +16,9 @@
 # Ignore Byebug command history file.
 .byebug_history
 
-# Ignore avatars
-/public/system/users/avatars/*
-/public/system/corottos/*
+# Ignore avatars and images
+/public/system/chefs/*
+/public/system/users/*
+
+# Ignore files
+/public/files/*
