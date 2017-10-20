@@ -49,7 +49,7 @@
   <div class="field">
     <%= f.label :date_of_birth %>
     <div class="field">
-        <%= f.date_select :date_of_birth, start_year: 1920, end_year: 2016 %>
+        <%= f.date_select :date_of_birth, start_year: 1920, end_year: Time.now.strftime("%Y").to_i-18%>
     </div>
   </div>
 
@@ -112,7 +112,7 @@
     <%= f.label :cv %>
     <%= f.file_field :cv %>
   </div>
-  
+
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
