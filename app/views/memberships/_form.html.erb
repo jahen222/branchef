@@ -1,0 +1,62 @@
+<%= form_for(membership) do |f| %>
+  <% if membership.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(membership.errors.count, "error") %> prohibited this membership from being saved:</h2>
+
+      <ul>
+      <% membership.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :months %>
+    <%= f.number_field :months %>
+  </div>
+
+  <div class="field">
+    <%= f.label :services %>
+    <%= f.number_field :services %>
+  </div>
+
+  <div class="field">
+    <%= f.label :clients_max %>
+    <%= f.number_field :clients_max %>
+  </div>
+
+  <div class="field">
+    <%= f.label :base_discount %>
+    <%= f.number_field :base_discount %>
+  </div>
+
+  <div class="field">
+    <%= f.label :dish_discount %>
+    <%= f.number_field :dish_discount %>
+  </div>
+
+  <div class="field">
+    <%= f.label :dishes_max %>
+    <%= f.number_field :dishes_max %>
+  </div>
+
+  <div class="field">
+    <%= f.label :no_dishes_max %>
+    <%= f.number_field :no_dishes_max %>
+  </div>
+
+  <div class="field">
+    <%= f.label :price %>
+    <%= f.text_field :price %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

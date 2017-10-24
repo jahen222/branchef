@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Memberships</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Months</th>
+      <th>Services</th>
+      <th>Clients max</th>
+      <th>Base discount</th>
+      <th>Dish discount</th>
+      <th>Dishes max</th>
+      <th>No dishes max</th>
+      <th>Price</th>
+      <th>Price whit discount</th>
+      <th>Saving</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @memberships.each do |membership| %>
+      <tr>
+        <td><%= membership.name %></td>
+        <td><%= membership.months %></td>
+        <td><%= membership.services %></td>
+        <td><%= membership.clients_max %></td>
+        <td><%= membership.base_discount %></td>
+        <td><%= membership.dish_discount %></td>
+        <td><%= membership.dishes_max %></td>
+        <td><%= membership.no_dishes_max %></td>
+        <td><%= membership.price %></td>
+        <td><%= membership.price_whit_discount %></td>
+        <td><%= membership.saving %></td>
+        <td><%= link_to 'Show', membership %></td>
+        <td><%= link_to 'Edit', edit_membership_path(membership) %></td>
+        <td><%= link_to 'Destroy', membership, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Membership', new_membership_path %> |
+<%= link_to 'Back', dashboard_path %>

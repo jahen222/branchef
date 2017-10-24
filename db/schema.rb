@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171020211533) do
+ActiveRecord::Schema.define(version: 20171024203835) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -93,6 +93,10 @@ ActiveRecord::Schema.define(version: 20171020211533) do
     t.string   "image10_content_type"
     t.integer  "image10_file_size"
     t.datetime "image10_updated_at"
+    t.string   "cv_file_name"
+    t.string   "cv_content_type"
+    t.integer  "cv_file_size"
+    t.datetime "cv_updated_at"
     t.string   "name"
     t.string   "last_name"
     t.boolean  "is_female",              default: false
@@ -102,10 +106,6 @@ ActiveRecord::Schema.define(version: 20171020211533) do
     t.datetime "date_of_birth"
     t.text     "summary"
     t.boolean  "is_branchef",            default: false
-    t.string   "cv_file_name"
-    t.string   "cv_content_type"
-    t.integer  "cv_file_size"
-    t.datetime "cv_updated_at"
     t.index ["email"], name: "index_chefs_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_chefs_on_reset_password_token", unique: true, using: :btree
   end
@@ -113,6 +113,20 @@ ActiveRecord::Schema.define(version: 20171020211533) do
   create_table "homes", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "memberships", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "months"
+    t.integer  "services"
+    t.integer  "clients_max"
+    t.integer  "base_discount"
+    t.integer  "dish_discount"
+    t.integer  "dishes_max"
+    t.integer  "no_dishes_max"
+    t.float    "price"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -132,6 +146,10 @@ ActiveRecord::Schema.define(version: 20171020211533) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "name"
+    t.string   "last_name"
+    t.string   "phone"
+    t.string   "address"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end

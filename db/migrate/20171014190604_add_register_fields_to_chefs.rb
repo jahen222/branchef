@@ -21,4 +21,6 @@ class AddRegisterFieldsToChefs < ActiveRecord::Migration[5.0]
   add_attachment :chefs, :image8
   add_attachment :chefs, :image9
   add_attachment :chefs, :image10
+  # Add field CV to chefs
+  add_attachment :chefs, :cv
 end

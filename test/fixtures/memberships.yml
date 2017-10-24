@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  months: 1
+  services: 1
+  clients_max: 1
+  base_discount: 1
+  dish_discount: 1
+  dishes_max: 1
+  no_dishes_max: 1
+  price: 1.5
+
+two:
+  name: MyString
+  months: 1
+  services: 1
+  clients_max: 1
+  base_discount: 1
+  dish_discount: 1
+  dishes_max: 1
+  no_dishes_max: 1
+  price: 1.5
