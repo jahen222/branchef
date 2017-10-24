@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :memberships
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   # Route for root
@@ -40,11 +39,13 @@ Rails.application.routes.draw do
     unlocks: "admins/unlocks"
   }
 
-  # Routes for users profiles
-  get '/profiles/:id', to: 'profiles#show'
-
   # Routes for users dashboard
   get '/dashboard', to: 'dashboard#index'
-  get '/dashboard/:id', to: 'dashboard#editchef', as: 'editchef'
-  post '/dashboard/:id/accepted', to: 'dashboard#accepted', as: 'accepted'
+
+  # Routes for memberships
+  resources :memberships
+
+  # Routes for chef_profiles
+  resources :chef_profiles
+  post '/chef_profiles/:id/accepted', to: 'chef_profiles#accepted', as: 'accepted'
 end

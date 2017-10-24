@@ -1,3 +1,7 @@
-<h3>Estatus del chef <%=@chef.name%>:</h3>
+<h1>Editing Chef Profile</h1>
+
+<h3>Estatus del chef <%=@chef_profile.name%>:</h3>
 <%= button_to 'Aceptar', accepted_path(:is_branchef => "1"), method: :post %>
 <%= button_to 'Rechazar', accepted_path(:is_branchef => "0"), method: :post %>
+
+<%= link_to 'Back', chef_profiles_path %>

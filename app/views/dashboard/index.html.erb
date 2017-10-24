@@ -1,25 +1,5 @@
 <h1>Edit Memberships</h1>
 <%= link_to 'Edit Memberships', memberships_path %>
 
-<h1>Listing chefs</h1>
-
-  <table>
-    <tr>
-      <th>Id</th>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Phone</th>
-      <th>Branchef</th>
-    </tr>
-
-    <% @chefs.each do |c| %>
-      <tr>
-        <td><%= c.id %></td>
-        <td><%= c.name %></td>
-        <td><%= c.email %></td>
-        <td><%= c.phone %></td>
-        <td><%= c.is_branchef %></td>
-        <td><%= link_to 'Edit', editchef_path(c.id) %></td>
-      </tr>
-    <% end %>
-  </table>
+<h1>Edit chefs</h1>
+<%= link_to 'Edit Chefs', chef_profiles_path %>

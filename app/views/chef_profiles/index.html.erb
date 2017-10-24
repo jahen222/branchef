@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Chef Profiles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Branchef</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @chef_profiles.each do |chef_profile| %>
+      <tr>
+        <td><%= chef_profile.id %></td>
+        <td><%= chef_profile.name %></td>
+        <td><%= chef_profile.email %></td>
+        <td><%= chef_profile.phone %></td>
+        <td><%= chef_profile.is_branchef %></td>
+        <td><%= link_to 'Show', chef_profile_path(chef_profile) %></td>
+        <td><%= link_to 'Edit', edit_chef_profile_path(chef_profile) %></td>
+        <td><%= link_to 'Destroy', chef_profile_path(chef_profile), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Back', dashboard_path %>
