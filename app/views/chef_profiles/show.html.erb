@@ -7,6 +7,11 @@
 </p>
 
 <p>
+  <strong>Email:</strong>
+  <%= @chef_profile.email %>
+</p>
+
+<p>
   <strong>Name:</strong>
   <%= @chef_profile.name %>
 </p>
@@ -137,7 +142,7 @@
 
 <% if @chef_profile.cv? %>
   <p>
-    <strong>Image10:</strong>
+    <strong>CV:</strong>
   	<%= link_to "Download CV", download_cv_path %>
   </p>
 <% end %>
