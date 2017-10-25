@@ -1,9 +1,147 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <h3>Status chef in branchef:</h3>
+  <%= link_to 'Aceptar', accepted_chef_path(:is_branchef => "1"), method: :post %>
+  <%= link_to 'Rechazar', accepted_chef_path(:is_branchef => "0"), method: :post %>
+</p>
+
+<p>
   <strong>Name:</strong>
   <%= @chef_profile.name %>
 </p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @chef_profile.last_name %>
+</p>
+
+<% if @chef_profile.is_female == true %>
+  <p>
+    <strong>Genero:</strong>
+  	<%= label :is_female, "Female" %>
+  </p>
+<% else %>
+  <p>
+    <strong>Genero:</strong>
+  	<%= label :is_female, "Male" %>
+  </p>
+<% end %>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @chef_profile.phone %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @chef_profile.address %>
+</p>
+
+<p>
+  <strong>Zip code:</strong>
+  <%= @chef_profile.zip_code %>
+</p>
+
+<p>
+  <strong>Date of birth:</strong>
+  <%= @chef_profile.date_of_birth %>
+</p>
+
+<p>
+  <strong>Summary:</strong>
+  <%= @chef_profile.summary %>
+</p>
+
+<% if @chef_profile.is_branchef == true %>
+  <p>
+    <strong>Chef of branchef:</strong>
+  	<%= label :is_branchef, "Accepted" %>
+  </p>
+<% else %>
+  <p>
+    <strong>Chef of branchef:</strong>
+  	<%= label :is_branchef, "Rejected" %>
+  </p>
+<% end %>
+
+<% if @chef_profile.image1? %>
+  <p>
+    <strong>Image1:</strong>
+  	<%= image_tag @chef_profile.image1.url(:medium) %>
+  </p>
+<% end %>
+
+<% if @chef_profile.image2? %>
+  <p>
+    <strong>Image2:</strong>
+  	<%= image_tag @chef_profile.image2.url(:medium) %>
+  </p>
+<% end %>
+
+<% if @chef_profile.image3? %>
+  <p>
+    <strong>Image3:</strong>
+  	<%= image_tag @chef_profile.image3.url(:medium) %>
+  </p>
+<% end %>
+
+<% if @chef_profile.image4? %>
+  <p>
+    <strong>Image4:</strong>
+  	<%= image_tag @chef_profile.image4.url(:medium) %>
+  </p>
+<% end %>
+
+<% if @chef_profile.image5? %>
+  <p>
+    <strong>Image5:</strong>
+  	<%= image_tag @chef_profile.image5.url(:medium) %>
+  </p>
+<% end %>
+
+<% if @chef_profile.image6? %>
+  <p>
+    <strong>Image6:</strong>
+  	<%= image_tag @chef_profile.image6.url(:medium) %>
+  </p>
+<% end %>
+
+<% if @chef_profile.image7? %>
+  <p>
+    <strong>Image7:</strong>
+  	<%= image_tag @chef_profile.image7.url(:medium) %>
+  </p>
+<% end %>
+
+<% if @chef_profile.image8? %>
+  <p>
+    <strong>Image8:</strong>
+  	<%= image_tag @chef_profile.image8.url(:medium) %>
+  </p>
+<% end %>
+
+<% if @chef_profile.image9? %>
+  <p>
+    <strong>Image9:</strong>
+  	<%= image_tag @chef_profile.image9.url(:medium) %>
+  </p>
+<% end %>
+
+<% if @chef_profile.image10? %>
+  <p>
+    <strong>Image10:</strong>
+  	<%= image_tag @chef_profile.image10.url(:medium) %>
+  </p>
+<% end %>
+
+<% if @chef_profile.cv? %>
+  <p>
+    <strong>Image10:</strong>
+  	<%= link_to "Download CV", download_cv_path %>
+  </p>
+<% end %>
+
 
 <%= link_to 'Edit', edit_chef_profile_path(@chef_profile) %> |
 <%= link_to 'Back', chef_profiles_path %>

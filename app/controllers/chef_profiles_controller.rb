@@ -47,10 +47,15 @@ class ChefProfilesController < ApplicationController
     @chef_profile = Chef.find(params[:id])
     @chef_profile.is_branchef = params[:is_branchef]
     if @chef_profile.save
-      redirect_to edit_chef_profile_path(params[:id])
+      redirect_to chef_profile_path(params[:id])
     else
       redirect_to root_path
     end
+  end
+
+  def download_cv
+    @chef_profile = Chef.find(params[:id])
+    send_file @chef_profile.cv.path, type: "application/pdf", x_sendfile: true
   end
 
   private

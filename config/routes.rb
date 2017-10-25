@@ -47,5 +47,6 @@ Rails.application.routes.draw do
 
   # Routes for chef_profiles
   resources :chef_profiles
-  post '/chef_profiles/:id/accepted', to: 'chef_profiles#accepted', as: 'accepted'
+  get '/chef_profiles/:id/download_cv', to: 'chef_profiles#download_cv', as: 'download_cv'
+  post '/chef_profiles/:id/accepted', to: 'chef_profiles#accepted', as: 'accepted_chef'
 end

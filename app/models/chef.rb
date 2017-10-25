@@ -31,5 +31,5 @@ class Chef < ApplicationRecord
 
   # Format cv of chef
   has_attached_file :cv
-  validates_attachment_content_type :cv, content_type: ['application/pdf', 'application/doc', 'application/docx']
+  validates_attachment_content_type :cv, content_type: ['application/pdf']
 end
