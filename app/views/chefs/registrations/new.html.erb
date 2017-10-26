@@ -54,6 +54,16 @@
   </div>
 
   <div class="field">
+      <%= f.label :specialties %>
+      <div class="field">
+        <%= f.collection_check_boxes :specialty_ids, Specialty.all, :id, :name do |b| %>
+          <%= b.check_box %>
+          <%= b.label %>
+        <% end %>
+      </div>
+  </div>
+
+  <div class="field">
     <%= f.label :summary %><br />
     <%= f.text_field :summary %>
   </div>

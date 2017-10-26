@@ -17,7 +17,7 @@ class PackagesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create package" do
     assert_difference('Package.count') do
-      post packages_url, params: { package: { base_discount: @package.base_discount, clients_max: @package.clients_max, dish_discount: @package.dish_discount, dishes_max: @package.dishes_max, months: @package.months, name: @package.name, no_dishes_max: @package.no_dishes_max, price: @package.price, services: @package.services } }
+      post packages_url, params: { package: { base_discount: @package.base_discount, clients_max: @package.clients_max, description: @package.description, dish_discount: @package.dish_discount, dishes_max: @package.dishes_max, months: @package.months, name: @package.name, no_dishes_max: @package.no_dishes_max, price: @package.price, services: @package.services } }
     end
 
     assert_redirected_to package_url(Package.last)
@@ -34,7 +34,7 @@ class PackagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update package" do
-    patch package_url(@package), params: { package: { base_discount: @package.base_discount, clients_max: @package.clients_max, dish_discount: @package.dish_discount, dishes_max: @package.dishes_max, months: @package.months, name: @package.name, no_dishes_max: @package.no_dishes_max, price: @package.price, services: @package.services } }
+    patch package_url(@package), params: { package: { base_discount: @package.base_discount, clients_max: @package.clients_max, description: @package.description, dish_discount: @package.dish_discount, dishes_max: @package.dishes_max, months: @package.months, name: @package.name, no_dishes_max: @package.no_dishes_max, price: @package.price, services: @package.services } }
     assert_redirected_to package_url(@package)
   end
 

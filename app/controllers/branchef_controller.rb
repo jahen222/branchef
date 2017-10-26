@@ -3,4 +3,7 @@ class BranchefController < ApplicationController
 
   def index
   end
+
+  def my_specialties
+  end
 end

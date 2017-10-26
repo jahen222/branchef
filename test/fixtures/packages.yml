@@ -9,6 +9,7 @@ one:
   dish_discount: 1
   dishes_max: 1
   no_dishes_max: 1
+  description: MyText
   price: 1.5
 
 two:
@@ -20,4 +21,5 @@ two:
   dish_discount: 1
   dishes_max: 1
   no_dishes_max: 1
+  description: MyText
   price: 1.5

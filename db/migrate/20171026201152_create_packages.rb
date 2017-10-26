@@ -9,6 +9,7 @@ class CreatePackages < ActiveRecord::Migration[5.0]
       t.integer :dish_discount
       t.integer :dishes_max
       t.integer :no_dishes_max
+      t.text :description
       t.float :price
 
       t.timestamps

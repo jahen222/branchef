@@ -1,0 +1,9 @@
+<% current_chef.specialties.each do |i| %>
+  <%= i.name %>
+  <% i.lunch.each do |j|%>
+    <%= j.entrance %>
+    <%= j.main_course %>
+    <%= j.dessert %>
+    <%= j.drink %>
+  <% end %>
+<% end %>

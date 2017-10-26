@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :packages
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   # Route for root, sign up and sign in
@@ -45,10 +44,23 @@ Rails.application.routes.draw do
   # Routes for admins dashboard
   get '/dashboard', to: 'dashboard#index'
 
-  # Routes for packets
-
   # Routes for chef_profiles
   resources :chef_profiles
   get '/chef_profiles/:id/download_cv', to: 'chef_profiles#download_cv', as: 'download_cv'
   post '/chef_profiles/:id/accepted', to: 'chef_profiles#accepted', as: 'accepted_chef'
+
+  # Routes for memberships
+  resources :memberships
+
+  # Routes for specialties
+  resources :specialties
+
+  # Routes for packages
+  resources :packages
+
+  # Routes for chefs branchef
+  get '/branchef', to: 'branchef#index'
+
+  # Routes for chefs specialties
+  get '/branchef/:id/my_specialties', to: 'branchef#my_specialties', as: 'my_specialties'  
 end

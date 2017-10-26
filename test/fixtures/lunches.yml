@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  entrance: false
+  entrance_value: 1.5
+  main_course: false
+  main_course_value: 1.5
+  dessert: false
+  dessert_value: 1.5
+  drink: false
+  drink_value: 1.5
+
+two:
+  entrance: false
+  entrance_value: 1.5
+  main_course: false
+  main_course_value: 1.5
+  dessert: false
+  dessert_value: 1.5
+  drink: false
+  drink_value: 1.5
