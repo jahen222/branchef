@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  resources :packages
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  # Route for root
+  # Route for root, sign up and sign in
   authenticated :user do
     root to: "home#index"
   end
@@ -15,7 +16,7 @@ Rails.application.routes.draw do
   get "sign_in" , to: "static_pages#sign_in", as: "static_pages_sign_in"
   get "sign_up" , to: "static_pages#sign_up", as: "static_pages_sign_up"
 
-  # Route for users whit devise
+  # Route for devise
   devise_for :users, controllers: {
     registrations: "users/registrations",
     sessions: "users/sessions",
@@ -24,6 +25,7 @@ Rails.application.routes.draw do
     confirmations: "users/confirmations",
     unlocks: "users/unlocks"
   }
+
   devise_for :chefs, controllers: {
     registrations: "chefs/registrations",
     sessions: "chefs/sessions",
@@ -31,6 +33,7 @@ Rails.application.routes.draw do
     confirmations: "chefs/confirmations",
     unlocks: "chefs/unlocks"
   }
+
   devise_for :admins, controllers: {
     registrations: "admins/registrations",
     sessions: "admins/sessions",
@@ -39,11 +42,10 @@ Rails.application.routes.draw do
     unlocks: "admins/unlocks"
   }
 
-  # Routes for users dashboard
+  # Routes for admins dashboard
   get '/dashboard', to: 'dashboard#index'
 
-  # Routes for memberships
-  resources :memberships
+  # Routes for packets
 
   # Routes for chef_profiles
   resources :chef_profiles

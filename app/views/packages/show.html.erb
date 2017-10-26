@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @package.name %>
+</p>
+
+<p>
+  <strong>Months:</strong>
+  <%= @package.months %>
+</p>
+
+<p>
+  <strong>Services:</strong>
+  <%= @package.services %>
+</p>
+
+<p>
+  <strong>Clients max:</strong>
+  <%= @package.clients_max %>
+</p>
+
+<p>
+  <strong>Base discount:</strong>
+  <%= @package.base_discount %>
+</p>
+
+<p>
+  <strong>Dish discount:</strong>
+  <%= @package.dish_discount %>
+</p>
+
+<p>
+  <strong>Dishes max:</strong>
+  <%= @package.dishes_max %>
+</p>
+
+<p>
+  <strong>No dishes max:</strong>
+  <%= @package.no_dishes_max %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @package.price %>
+</p>
+
+<%= link_to 'Edit', edit_package_path(@package) %> |
+<%= link_to 'Back', packages_path %>

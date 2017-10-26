@@ -45,8 +45,14 @@ class ChefProfilesController < ApplicationController
 
   def accepted
     @chef_profile = Chef.find(params[:id])
-    @chef_profile.is_branchef = params[:is_branchef]
-    if @chef_profile.save
+    if params[:is_branchef] == "true"
+      @chef_profile.send_confirmation_instructions
+      @chef_profile.is_branchef = params[:is_branchef]
+      @chef_profile.save
+      redirect_to chef_profile_path(params[:id])
+    elsif params[:is_branchef] == "false"
+      @chef_profile.is_branchef = params[:is_branchef]
+      @chef_profile.save
       redirect_to chef_profile_path(params[:id])
     else
       redirect_to root_path

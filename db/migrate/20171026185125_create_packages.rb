@@ -1,6 +1,6 @@
-class CreateMemberships < ActiveRecord::Migration[5.0]
+class CreatePackages < ActiveRecord::Migration[5.0]
   def change
-    create_table :memberships do |t|
+    create_table :packages do |t|
       t.string :name
       t.integer :months
       t.integer :services
